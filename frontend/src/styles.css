@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+/* Remove this deprecated property */
+element {
+    -ms-high-contrast-adjust: none;
+}
+
+/* Add this new standard */
+@media (forced-colors: active) {
+    element {
+        forced-color-adjust: none;
+    }
+}

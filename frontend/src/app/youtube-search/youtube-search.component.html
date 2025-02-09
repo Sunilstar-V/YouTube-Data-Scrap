@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="search-bar input-group mb-4">
+        <input type="text" class="form-control form-control-lg" placeholder="Search YouTube..."
+               [(ngModel)]="searchQuery" (keyup.enter)="searchVideos()">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" (click)="searchVideos()">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let video of searchResults" class="col-lg-4 col-md-6 mb-4">
+      <div class="card video-card h-100">
+        <img [src]="video.thumbnail" class="card-img-top video-thumbnail" alt="Video Thumbnail">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title video-title">{{ video.title }}</h5>
+          <p class="card-text video-description">{{ video.description | truncate: 150 }}</p>
+          <div class="mt-auto video-stats">
+            <span class="views"><i class="fas fa-eye"></i> {{ video.views }}</span>
+            <span class="likes"><i class="fas fa-thumbs-up"></i> {{ video.likes }}</span>
+            <span class="comments"><i class="fas fa-comment"></i> {{ video.comments }}</span>
+            <button class="btn btn-sm btn-success save-button" (click)="saveVideo(video)">
+              <i class="fas fa-save"></i> Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="message" class="alert alert-info mt-3">{{ message }}</div>
+</div>
