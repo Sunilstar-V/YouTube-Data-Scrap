@@ -82,7 +82,7 @@ MONGO_URI = "mongodb://localhost:27017"
 DATABASE_NAME = "youtube_data"
 COLLECTION_NAME = "videos"
 
-YOUTUBE_API_KEY = "AIzaSyBrh3-BL3wLdf8RLz8GaZXVmnF9amooPjA"  #API key need to add
+YOUTUBE_API_KEY = "YOUTUBE API"  #API key need to add
 youtube = build("youtube", "v3", developerKey=YOUTUBE_API_KEY)
 
 # MongoDB Client
